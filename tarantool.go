@@ -126,7 +126,7 @@ func (Tarantool) Eval(conn *multi.ConnectionMulti, expr string, args interface{}
 }
 
 // Create a new stream
-func (Tarantool) Stream(conn *multi.ConnectionMulti) (*tarantool.Stream, error) {
+func (Tarantool) NewStream(conn *multi.ConnectionMulti) (*tarantool.Stream, error) {
 	resp, err := conn.NewStream(expr, args)
 	if err != nil {
 		return nil, err
